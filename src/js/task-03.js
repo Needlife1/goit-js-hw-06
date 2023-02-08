@@ -19,7 +19,7 @@ const images = [
 const galleryEl = document.querySelector(".gallery");
 
 const imageEl = images.map(img =>{ 
-  return `<li><img url: src=${img.url} alt: ${img.alt} width = 630 /></li>`}).join("");
+  return `<li><img url: src="${img.url}" alt="${img.alt}"  width = 550 height = 380 /></li>`}).join("");
  
 
 galleryEl.insertAdjacentHTML("beforeend", imageEl);
