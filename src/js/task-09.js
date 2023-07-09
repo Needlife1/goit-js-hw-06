@@ -1,16 +1,23 @@
-
-
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
 
-const changeColorBtn = document.querySelector('.change-color');
-const spanColor = document.querySelector('.color');
-const body = document.querySelector('body');
+const refs = {
+  body: document.querySelector("body"),
+  colorText: document.querySelector(".color"),
+  chengeColorBtn: document.querySelector(".change-color"),
+};
 
-changeColorBtn.addEventListener('click', () => {
-  const randomColor = getRandomHexColor();
-  body.style.backgroundColor = randomColor;
-  spanColor.textContent = randomColor;
+refs.chengeColorBtn.addEventListener("click", chengeColorBody);
 
-});
+function chengeColorBody(ivent) {
+  const color = getRandomHexColor();
+  refs.body.style.backgroundColor = color;
+  outputColor();
+}
+
+function outputColor() {
+  refs.colorText.textContent = getRandomHexColor();
+}

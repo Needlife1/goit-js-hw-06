@@ -1,12 +1,12 @@
+const categories = document.querySelector("#categories");
+const children = [...categories.children];
 
-const arrayOfCategories = categories.querySelectorAll(".item");
-console.log(`Number of categories: ${arrayOfCategories.length}`);
+children.forEach((element, index, arr) => {
+  const total = arr.length;
+  console.log(`Number of categories: ${total}`);
+});
 
-const CategoriesArray = [...arrayOfCategories]
-  .map(
-    categories => `Category: ${categories.children[0].textContent}
-  Elements: ${categories.children[1].children.length}`
-  ).join();
-  
-
-
+children.forEach((el) => {
+  console.log(`Category:${el.children[0].textContent}`);
+  console.log(`Elements:${el.lastElementChild.children.length}`);
+});

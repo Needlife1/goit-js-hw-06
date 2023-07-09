@@ -1,9 +1,11 @@
+const refs = {
+  fontSizeControl: document.querySelector("#font-size-control"),
+  textSpan: document.querySelector("#text"),
+};
 
+refs.fontSizeControl.addEventListener("input", chengeTextFontSize);
 
-const inputTextRef = document.querySelector("#text");
-const inputControlRef = document.querySelector("#font-size-control");
-
-inputControlRef.oninput = function () {
-    
-    inputTextRef.style.fontSize = inputControlRef.value + 'px';
+function chengeTextFontSize(event) {
+  refs.textSpan.style.fontSize = event.currentTarget.value + "px";
+  console.log(event.currentTarget.value);
 }
